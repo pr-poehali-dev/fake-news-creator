@@ -98,4 +98,22 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Добавляем стили для скроллбара */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9b87f5;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7E69AB;
+  }
 }
