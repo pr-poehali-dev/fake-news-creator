@@ -1,7 +1,5 @@
-
-import type { Config } from 'tailwindcss';
-
-const config = {
+/** @type {import('tailwindcss').Config} */
+export default {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -9,6 +7,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -24,13 +23,6 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        news: {
-          primary: "#9b87f5",
-          secondary: "#7E69AB",
-          accent: "#F1F0FB",
-          background: "#FFFFFF",
-          text: "#1A1F2C"
-        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -59,6 +51,14 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Цвета для новостного сайта
+        news: {
+          primary: "#8B5CF6", // Основной фиолетовый
+          secondary: "#6E59A5", // Темный фиолетовый
+          accent: "#E5DEFF", // Светло-фиолетовый фон
+          background: "#FFFFFF", // Белый фон
+          text: "#1A1F2C", // Темный текст
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -67,12 +67,12 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0", opacity: "0" },
-          to: { height: "var(--radix-accordion-content-height)", opacity: "1" },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-          to: { height: "0", opacity: "0" },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         "fade-in": {
           "0%": { opacity: "0", transform: "translateY(10px)" },
@@ -92,6 +92,4 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
-
-export default config;
+}
